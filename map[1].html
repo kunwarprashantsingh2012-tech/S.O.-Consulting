@@ -3,12 +3,14 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
 
 <title>Global Cement Plants Map | S.O. Consulting</title>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
@@ -35,11 +37,11 @@ font-weight:500;
 }
 
 #map{
-height:650px;
+height:700px;
 width:100%;
 }
 
-.title{
+.container{
 padding:40px 8%;
 }
 
@@ -65,49 +67,52 @@ padding:40px 8%;
 </header>
 
 
-<div class="title">
+<div class="container">
 
 <h2>Global Cement Plants Map</h2>
 
 <p>
-Interactive map of global cement production facilities using the
+Interactive map of global cement plants using the
 Global Energy Monitor dataset.
 </p>
 
 </div>
-
 
 <div id="map"></div>
 
 
 <script>
 
+document.addEventListener("DOMContentLoaded", function () {
+
 var map = L.map('map').setView([20,0],2);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
-maxZoom:18
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+maxZoom: 18,
+attribution: '© OpenStreetMap'
 }).addTo(map);
 
 
-// Example markers
-
-L.marker([37.9,-90.2]).addTo(map)
-.bindPopup("Ste Genevieve Cement Plant<br>Company: Holcim<br>Country: USA");
+// Test plant markers
 
 L.marker([26.1,74.3]).addTo(map)
-.bindPopup("Beawar Cement Plant<br>Company: Shree Cement<br>Country: India");
+.bindPopup("Beawar Cement Plant<br>Shree Cement<br>India");
 
 L.marker([31.3,118.4]).addTo(map)
-.bindPopup("Wuhu Cement Plant<br>Company: Anhui Conch<br>Country: China");
+.bindPopup("Wuhu Cement Plant<br>Anhui Conch<br>China");
+
+L.marker([37.9,-90.2]).addTo(map)
+.bindPopup("Ste Genevieve Plant<br>Holcim<br>USA");
 
 L.marker([7.9,6.7]).addTo(map)
-.bindPopup("Obajana Cement Plant<br>Company: Dangote Cement<br>Country: Nigeria");
+.bindPopup("Obajana Plant<br>Dangote Cement<br>Nigeria");
 
 L.marker([53.5,-113.5]).addTo(map)
-.bindPopup("Edmonton Cement Plant<br>Company: Heidelberg Materials<br>Country: Canada");
+.bindPopup("Edmonton Plant<br>Heidelberg Materials<br>Canada");
+
+});
 
 </script>
-
 
 </body>
 
