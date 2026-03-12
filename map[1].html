@@ -1,10 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Global Cement Plants Map | S.O. Consulting</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+border-bottom:1px solid #eee;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+#map{
+height:650px;
+width:100%;
+}
+
+.title{
+padding:40px 8%;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<header>
+
+<b>S.O. Consulting Pvt Ltd</b>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="database.html">Cement Database</a>
+<a href="map.html">Global Map</a>
+
+</nav>
+
+</header>
+
+
+<div class="title">
+
+<h2>Global Cement Plants Map</h2>
+
+<p>
+Interactive map of global cement production facilities using the
+Global Energy Monitor dataset.
+</p>
+
+</div>
+
+
+<div id="map"></div>
+
+
+<script>
+
 var map = L.map('map').setView([20,0],2);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
 maxZoom:18
 }).addTo(map);
+
+
+// Example markers
+
+L.marker([37.9,-90.2]).addTo(map)
+.bindPopup("Ste Genevieve Cement Plant<br>Company: Holcim<br>Country: USA");
+
 L.marker([26.1,74.3]).addTo(map)
-.bindPopup("Beawar Cement Plant");
+.bindPopup("Beawar Cement Plant<br>Company: Shree Cement<br>Country: India");
 
 L.marker([31.3,118.4]).addTo(map)
-.bindPopup("Wuhu Cement Plant");
+.bindPopup("Wuhu Cement Plant<br>Company: Anhui Conch<br>Country: China");
+
+L.marker([7.9,6.7]).addTo(map)
+.bindPopup("Obajana Cement Plant<br>Company: Dangote Cement<br>Country: Nigeria");
+
+L.marker([53.5,-113.5]).addTo(map)
+.bindPopup("Edmonton Cement Plant<br>Company: Heidelberg Materials<br>Country: Canada");
+
+</script>
+
+
+</body>
+
+</html>
