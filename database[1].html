@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cement Plants Database</title>
+<style>
+body{margin:0;font-family:Inter,Arial;color:#1a1a1a;background:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 8%;border-bottom:1px solid #eee;background:#fff}
+nav a{margin-left:20px;text-decoration:none;color:#333;font-weight:500}
+.hero{padding:150px 8%;background:linear-gradient(120deg,#0A3D91,#2F80ED);color:#fff}
+.section{padding:70px 8%}
+table{width:100%;border-collapse:collapse;margin-top:20px}
+th,td{padding:10px;border-bottom:1px solid #eee}
+th{background:#f5f7fa}
+input{padding:10px;border:1px solid #ddd}
+</style>
+</head>
+<body>
+
+<header>
+<b>S.O. Consulting</b>
+<nav>
+<a href="index.html">Home</a>
+<a href="map.html">Map</a>
+</nav>
+</header>
+
+<section class="section">
+
+<h2>Global Cement Plants Database</h2>
+
+<input id="search" placeholder="Search plant/company/country">
+
+<table id="table">
+<tr><th>Plant</th><th>Company</th><th>Country</th><th>Capacity</th></tr>
+<tr><td></td><td>Global Cement and Concrete Tracker - July 2025</td><td></td><td></td></tr>
+<tr><td></td><td>Copyright © Global Energy Monitor. Global Cement and Concrete Tracker, July 2025 (V1) release. Distributed under a Creative Commons Attribution 4.0 International License. </td><td></td><td></td></tr>
+<tr><td></td><td>Recommended Citation: "Global Energy Monitor, Global Cement and Concrete Tracker, July 2025 (V1) release." (See the CC license for attribution requirements if sharing or adapting the data set.)</td><td></td><td></td></tr>
+<tr><td></td><td>Contacts:  Joshua Clement, Project Manager, joshua.clement@globalenergymonitor.org
+Caitlin Swalec, Heavy Industry Program Director, caitlin.swalec@globalenergymonitor.org</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Notes</td><td></td><td></td></tr>
+<tr><td></td><td>1. For background, additional infomation, and references, see wiki pages for corresponding cement plant.</td><td></td><td></td></tr>
+<tr><td></td><td>2. For the Methodology, see (link)</td><td></td><td></td></tr>
+<tr><td></td><td>3. For summary statistics by province, country/area, region, etc., see "Summary Tables" at (link)</td><td></td><td></td></tr>
+<tr><td></td><td>4. This database includes integrated and grinding plants including all plants that have been proposed or under construction since 2018 and retired or mothballed since 2021.</td><td></td><td></td></tr>
+<tr><td></td><td>5. The Global Energy Monitor website provides a mapping tool for this data and our Global Cement and Concrete Tracker (GCCT) at (link)</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Status definitions</td><td></td><td></td></tr>
+<tr><td></td><td>Announced</td><td>Plants that have been announced in corporate or governmental planning documents, but have not begun construction.</td><td></td></tr>
+<tr><td></td><td>Construction</td><td>Construction of a physical plant facility has begun.</td><td></td></tr>
+<tr><td></td><td>Operating</td><td>Plant is operating one or more clinker or cement manufacturing unit(s).</td><td></td></tr>
+<tr><td></td><td>Mothballed</td><td>Plant has been idled such that it cannot be brought into operation immediately, but is not closed. Note that plants undergoing routine maintenance are still considered "operating."</td><td></td></tr>
+<tr><td></td><td>Operating pre-retirement</td><td>Plant has announced plans to retire its cement capacity but has not yet ceased operations.</td><td></td></tr>
+<tr><td></td><td>Retired</td><td>Plant has ceased operations and no longer has the ability to produce clinker and/or cement.</td><td></td></tr>
+<tr><td></td><td>Cancelled</td><td>Plant previously planned or under development that has been cancelled. If no progress or announcements for an announced plant are made after 5 years, the plant is considered to be cancelled.</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Units</td><td></td><td></td></tr>
+<tr><td></td><td>Mtpa</td><td>million tonnes per annum</td><td></td></tr>
+<tr><td></td><td>Mt</td><td>million tonnes</td><td></td></tr>
+
+</table>
+
+</section>
+
+<script>
+const search=document.getElementById("search");
+
+search.addEventListener("keyup",function(){
+let filter=search.value.toLowerCase();
+document.querySelectorAll("#table tr").forEach(r=>{
+let text=r.innerText.toLowerCase();
+r.style.display=text.includes(filter)?"":"none";
+});
+});
+</script>
+
+</body>
+</html>
